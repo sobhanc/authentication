@@ -84,14 +84,13 @@ export const setLocalStorage = (key, value) => {
   }
 };
 
-// remove from localStrorage
+//remove from localStrorage
 export const removeLocalStorage = (key) => {
   if (process.browser) {
     localStorage.removeItem(key);
   }
 };
 
-// autheticate user by pass data to cookie and localStorage
 export const autheticate = (data, next) => {
   setCookie("token", data.token);
   setLocalStorage("user", data.user);

@@ -21,11 +21,8 @@ exports.signup = (req, res) => {
           error: err,
         });
       }
-      // res.json({
-      //   user: success,
-      // });
       res.json({
-        message: "signup success! please login.",
+        message: "signup successful! you can now login.",
       });
     });
   });
@@ -99,7 +96,7 @@ exports.adminMiddleware = (req, res, next) => {
     }
     if (user.role !== 1) {
       return res.status(400).json({
-        error: "Admin resource Access denied",
+        error: "Admin resource access denied",
       });
     }
     next();

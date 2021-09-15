@@ -30,27 +30,6 @@ const userSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    // profile: {
-    //   type: String,
-    //   required: true,
-    // },
-    // username: {
-    //   type: String,
-    //   trim: true,
-    //   required: true,
-    //   max: 30,
-    //   unique: true,
-    //   index: true,
-    //   lowercase: true,
-    // },
-    // photo: {
-    //   data: Buffer,
-    //   contentType: String,
-    // },
-    // resetPasswordLink: {
-    //   data: String,
-    //   default: "",
-    // },
   },
   { timestamps: true }
 );

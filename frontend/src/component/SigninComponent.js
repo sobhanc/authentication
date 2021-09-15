@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 
 const SigninComponent = ({ history }) => {
   const [values, setValues] = useState({
-    email: "alamin@gmail.com",
+    email: "sobhan@gmail.com",
     password: "123456",
     error: "",
     loading: false,
@@ -20,7 +20,6 @@ const SigninComponent = ({ history }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //console.table({ name, email, password, error, loading, message, showForm });
 
     setValues({ ...values, loading: true, error: false });
     const user = { email, password };
@@ -30,9 +29,7 @@ const SigninComponent = ({ history }) => {
         if (data.error) {
           setValues({ ...values, error: data.error, loading: false });
         } else {
-          //save user token to cookie
-          //save user info to localStroage
-          //authenticate user
+          //save user token to cookie, save user info to localStroage, authenticate user
           autheticate(data, () => {
             if (isAuth() && isAuth().role === 1) {
               history.push("/admin");
@@ -51,7 +48,7 @@ const SigninComponent = ({ history }) => {
     setValues({ ...values, error: false, [name]: e.target.value });
   };
 
-  const showLaoding = () =>
+  const showLoading = () =>
     loading ? <div className="alert alert-info">Loading...</div> : "";
   const showError = () =>
     error ? <div className="alert alert-danger">{error}</div> : "";
@@ -88,7 +85,7 @@ const SigninComponent = ({ history }) => {
 
   return (
     <div className="container">
-      {showLaoding()}
+      {showLoading()}
       {showError()}
       {showMessage()}
       {showForm && signinForm()}

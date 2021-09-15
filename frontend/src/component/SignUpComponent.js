@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { isAuth, signup } from "../action/authAcation";
 import { withRouter } from "react-router-dom";
 
-const SignUpComponet = ({ history }) => {
+const SignUpComponent = ({ history }) => {
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -112,4 +112,4 @@ const SignUpComponet = ({ history }) => {
   );
 };
 
-export default withRouter(SignUpComponet);
+export default withRouter(SignUpComponent);

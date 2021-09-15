@@ -1,5 +1,5 @@
 import React from "react";
-import SignupComponent from "../component/SignUpComponet";
+import SignupComponent from "../component/SignUpComponent";
 const SignUp = () => {
   return (
     <React.Fragment>
